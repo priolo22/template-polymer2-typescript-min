@@ -1,0 +1,13 @@
+{
+	"name": "template-polymer2-typescript-system",
+	"version": "1.0.0",
+	"description": "",
+	"author": "",
+	"license": "",
+	"devDependencies": {
+		"typescript": "^2.4.1"
+	},
+	"dependencies": {
+		"systemjs": "^0.20.15"
+	}
+}

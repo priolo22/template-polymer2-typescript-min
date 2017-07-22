@@ -1,0 +1,46 @@
+<!--
+	RIFERIMENTO::
+	https://gist.github.com/daflair/05889c2cd0f44cbd4314bf4703d27bcc
+-->
+
+<dom-module id="my-app">
+
+	<template>
+		<style is="custom-style" include="iron-flex iron-flex-alignment"></style>
+
+		<style>
+			:host {
+				display: block;
+			}
+		</style>
+
+		<div class="layout horizontal">
+
+			<div class="layout flex" style="background-color: red;"></div>
+
+			<div class="layout vertical" style="width:300px; background-color: yellow;">
+
+				<input type="button" value="change status" on-click="onTapTest" />
+				<input type="button" value="add in array" on-click="onTapAddInArray" />
+
+				<div>[[model.name]] [[model.surname]]</div>
+
+				<!-- <div class="layout horizontal">
+					<template is="dom-repeat" items="[[model.test.users.items]]">
+						<div>[[item]]</div>
+					</template>
+				</div> -->
+
+			</div>
+
+		</div>
+
+	</template>
+
+	<script>
+		SystemJS.import('views/my-app').then(function (mod) {
+			customElements.define("my-app", mod.MyApp); 
+		});
+	</script>
+	
+</dom-module>
