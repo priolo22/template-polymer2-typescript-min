@@ -5,8 +5,7 @@
         "module": "system",
         
         "sourceMap": false,
-        "outFile": "dist/index.js",
-        "sourceRoot": "./src/",
+        "outFile": "dist/bundle.js",
         "rootDir": "./src/",
         "baseUrl": "./src/",
 

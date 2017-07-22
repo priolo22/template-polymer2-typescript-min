@@ -65,6 +65,9 @@ System.register("views/my-cmp", ["models/users"], function (exports_3, context_3
                     super();
                     this.model = new users_1.User("Ivano", "iorio");
                 }
+                modelChanged(modelNew, modelOld) {
+                    console.log("model changed ");
+                }
             };
             exports_3("MyComponent", MyComponent);
         }

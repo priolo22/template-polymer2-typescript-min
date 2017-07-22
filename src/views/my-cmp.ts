@@ -29,5 +29,10 @@ export class MyComponent extends Polymer.Element {
 
     model: User;
 
+
+    modelChanged ( modelNew, modelOld ) {
+        console.log ( "model changed " );
+    }
+
 }
 
