@@ -15,20 +15,40 @@ System.register("models/users", [], function (exports_1, context_1) {
         }
     };
 });
-/// <reference path="../../typings/element.d.ts" />
-System.register("views/my-app", ["models/users"], function (exports_2, context_2) {
+System.register("views/my-app", [], function (exports_2, context_2) {
     "use strict";
     var __moduleName = context_2 && context_2.id;
-    var users_1, MyApp;
+    var MyApp;
+    return {
+        setters: [],
+        execute: function () {
+            MyApp = class MyApp extends Polymer.Element {
+                static get is() { return 'my-app'; }
+                constructor() {
+                    super();
+                }
+                // INTERFACE EVENTS
+                onClick() {
+                    console.log("on click");
+                }
+            };
+            exports_2("MyApp", MyApp);
+        }
+    };
+});
+System.register("views/my-cmp", ["models/users"], function (exports_3, context_3) {
+    "use strict";
+    var __moduleName = context_3 && context_3.id;
+    var users_1, MyComponent;
     return {
         setters: [
             function (users_1_1) {
                 users_1 = users_1_1;
             }
         ],
-        execute: function () {/// <reference path="../../typings/element.d.ts" />
-            MyApp = class MyApp extends Polymer.Element {
-                static get is() { return 'my-app'; }
+        execute: function () {
+            MyComponent = class MyComponent extends Polymer.Element {
+                static get is() { return 'my-cmp'; }
                 static get properties() {
                     return {
                         model: {
@@ -45,17 +65,8 @@ System.register("views/my-app", ["models/users"], function (exports_2, context_2
                     super();
                     this.model = new users_1.User("Ivano", "iorio");
                 }
-                onTapTest() {
-                    console.log("on tap");
-                }
-                onTapAddInArray() {
-                    console.log("on tap");
-                }
-                modelChanged(value, oldValue) {
-                    console.log("onTestPropChange: " + value);
-                }
             };
-            exports_2("MyApp", MyApp);
+            exports_3("MyComponent", MyComponent);
         }
     };
 });
